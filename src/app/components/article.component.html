@@ -1,1 +1,13 @@
-<p>article works!</p>
+<div style="display: flex; gap: 1rem">
+  <button (click)="showJavaArticles()">Java article</button>
+  <button (click)="showAngularArticles()">Angular article</button>
+  <button (click)="showFavoriteArticles()">Angular article</button>
+</div>
+
+<div *ngFor="let article of articles | async">
+  <ul style="display: inline-flex; list-style-type: circle">
+    <li style="margin: 1rem">{{ article.id }}</li>
+    <li style="margin: 1rem">{{ article.title }}</li>
+    <li style="margin: 1rem">{{ article.category }}</li>
+  </ul>
+</div>
