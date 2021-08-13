@@ -2,21 +2,21 @@
 
 - npm i @ngrx/store --save
 
-# build a CRUD application using @ngrx/store
+## build a CRUD application using @ngrx/store
 
-## define models
+> define models
 
-## define actions
+> define actions
 
-## define states
+> define states
 
 app level state + feature specific state
 
-## define reducers, include
+> define reducers, include
 
-> feature specific reducer
-> feature specific selector
-> reducers: ActionReducerMap
+- feature specific reducer
+- feature specific selector
+- reducers: ActionReducerMap
 
 ## modify app.module.ts
 
