@@ -1,0 +1,12 @@
+<div style="display: flex; gap: 1rem">
+  <button (click)="showJavaCourses()">Java course</button>
+  <button (click)="showAngularCourses()">Angular course</button>
+  <button (click)="showFavoriteCourses()">Favorite course</button>
+</div>
+
+<div *ngFor="let course of courses | async">
+  <ul style="display: inline-flex; list-style-type: circle">
+    <li style="margin: 1rem">{{ course.id }}</li>
+    <li style="margin: 1rem">{{ course.name }}</li>
+  </ul>
+</div>
