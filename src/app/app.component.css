@@ -1,0 +1,5 @@
+.router-link-active {
+  font-size: 1.1rem;
+  box-shadow: 0 2px 5px 3px coral;
+  transition: all 0.6s;
+}
