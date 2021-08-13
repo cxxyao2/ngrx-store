@@ -1,7 +1,7 @@
 <div style="display: flex; gap: 1rem">
   <button (click)="showJavaArticles()">Java article</button>
   <button (click)="showAngularArticles()">Angular article</button>
-  <button (click)="showFavoriteArticles()">Angular article</button>
+  <button (click)="showFavoriteArticles()">Favorite article</button>
 </div>
 
 <div *ngFor="let article of articles | async">
