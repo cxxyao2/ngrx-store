@@ -1,28 +1,31 @@
+# build a CRUD application using @ngrx/store
+
+## packages
 - @ngrx/store : a state management tool. It is equivalent to Redux in React.
 
 - npm i @ngrx/store --save
 
-## build a CRUD application using @ngrx/store
+## steps
 
-> define models
+- define models  
 
-> define actions
+- define actions  
 
-> define states
+- define states  
 
-app level state + feature specific state
+    - app level state + feature specific state
 
-> define reducers, include
+- define reducers, include
 
-- feature specific reducer
-- feature specific selector
-- reducers: ActionReducerMap
+    - feature specific reducer  
+    - feature specific selector  
+    - reducers: ActionReducerMap  
 
-## modify app.module.ts
+- modify app.module.ts
 
-> imports: StoreModule.forRoot(reducers, { metaReducers }),
+    - imports: StoreModule.forRoot(reducers, { metaReducers }),
 
-## use store in component
+- use store in component
 
 ```
  courses: Observable<Course[]>;
