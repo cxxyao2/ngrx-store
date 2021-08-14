@@ -54,4 +54,4 @@
   - component event--> effects ---> service--->(internet)-->backend database
 
 - file structure
-  - ![File Structure](assets/filestructure.png)
+  - ![File Structure](https://github.com/cxxyao2/ngrx-store/blob/feature2-ngrx-entity/src/assets/filestructure.png)
