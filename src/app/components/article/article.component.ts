@@ -2,8 +2,8 @@ import { Store } from '@ngrx/store';
 
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import * as articleReducer from '../../reducers/article.reducer';
-import * as fromActions from '../../actions/article.actions';
+import * as articleReducer from '../../store/reducers/article.reducer';
+import * as fromActions from '../../store/actions/article.actions';
 import { Article, FAVORITE_ARTICLES } from '../../models/article';
 
 @Component({

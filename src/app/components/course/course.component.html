@@ -1,7 +1,7 @@
-<div style="display: flex; gap: 1rem">
-  <button (click)="showJavaCourses()">Java course</button>
-  <button (click)="showAngularCourses()">Angular course</button>
-  <button (click)="showFavoriteCourses()">Favorite course</button>
+<div style="display: flex; gap: 1rem;">
+  <button class="btn btn-secondary" (click)="showJavaCourses()">Java course</button>
+  <button class="btn btn-secondary"(click)="showAngularCourses()">Angular course</button>
+  <button class="btn btn-secondary"  (click)="showFavoriteCourses()">Favorite course</button>
 </div>
 
 <div *ngFor="let course of courses | async">

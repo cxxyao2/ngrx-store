@@ -1,13 +1,15 @@
-<div style="display: flex; gap: 1rem">
-  <button (click)="showJavaArticles()">Java article</button>
-  <button (click)="showAngularArticles()">Angular article</button>
-  <button (click)="showFavoriteArticles()">Favorite article</button>
+<div style="display: flex; gap: 1rem;">
+  <button class="btn btn-secondary" (click)="showJavaArticles()">Java article</button>
+  <button class="btn btn-secondary"(click)="showAngularArticles()">Angular article</button>
+  <button class="btn btn-secondary"(click)="showFavoriteArticles()">Favorite article</button>
 </div>
 
-<div *ngFor="let article of articles | async">
-  <ul style="display: inline-flex; list-style-type: circle">
-    <li style="margin: 1rem">{{ article.id }}</li>
-    <li style="margin: 1rem">{{ article.title }}</li>
-    <li style="margin: 1rem">{{ article.category }}</li>
-  </ul>
+<div class="container border mt-3">
+  <div *ngFor="let article of articles | async">
+    <ul style="display: inline-flex; list-style-type: circle">
+      <li style="margin: 1rem">{{ article.id }}</li>
+      <li style="margin: 1rem">{{ article.title }}</li>
+      <li style="margin: 1rem">{{ article.category }}</li>
+    </ul>
+  </div>
 </div>

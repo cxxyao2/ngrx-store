@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as crousesActions from '../actions/course.actions';
-import { JAVA_COURSES, ANGULAR_COURSES } from '../models/course';
+import { JAVA_COURSES, ANGULAR_COURSES } from '../../models/course';
 import { CourseState } from './app.states';
 
 export const initialState: CourseState = { courses: [] };

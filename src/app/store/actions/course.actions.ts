@@ -1,5 +1,5 @@
 import { Action } from '@ngrx/store';
-import { Course } from '../models/course';
+import { Course } from '../../models/course';
 
 export const JAVA_COURSRE = 'Java Course';
 export const ANGULAR_COURSE = 'ANGULAR Course';

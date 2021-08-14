@@ -1,6 +1,6 @@
 import { createFeatureSelector, createSelector } from '@ngrx/store';
 import * as fromActions from '../actions/article.actions';
-import { JAVA_ARTICLES, ANGULAR_ARTICLES } from '../models/article';
+import { JAVA_ARTICLES, ANGULAR_ARTICLES } from '../../models/article';
 import { ArticleState } from './app.states';
 
 export const initialState: ArticleState = { articles: [] };

@@ -2,8 +2,8 @@ import { Store } from '@ngrx/store';
 
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import * as courseReducer from '../../reducers/course.reducer';
-import * as fromActions from '../../actions/course.actions';
+import * as courseReducer from '../../store/reducers/course.reducer';
+import * as fromActions from '../../store/actions/course.actions';
 import { Course, FAVORITE_COURSES } from '../../models/course';
 
 @Component({

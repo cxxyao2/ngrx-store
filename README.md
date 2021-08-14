@@ -1,29 +1,32 @@
 # build a CRUD application using @ngrx/store
 
 ## packages
-- @ngrx/store : a state management tool. It is equivalent to Redux in React.
 
-- npm i @ngrx/store --save
+- @ngrx/store : a state management tool. It is equivalent to Redux in React.
+- @ngrx/effects: this package provide a way to interact with external resources such as fetching data or long-runing tasks.
+- ngrx website:[ngrx.io](https://ngrx.io/guide/effects)
+
+- npm i @ngrx/store @ngrx/effects -save
 
 ## steps
 
-- define models  
+- define models
 
-- define actions  
+- define actions
 
-- define states  
+- define states
 
-    - app level state + feature specific state
+  - app level state + feature specific state
 
 - define reducers, include
 
-    - feature specific reducer  
-    - feature specific selector  
-    - reducers: ActionReducerMap  
+  - feature specific reducer
+  - feature specific selector
+  - reducers: ActionReducerMap
 
 - modify app.module.ts
 
-    - imports: StoreModule.forRoot(reducers, { metaReducers }),
+  - imports: StoreModule.forRoot(reducers, { metaReducers }),
 
 - use store in component
 
@@ -38,3 +41,17 @@
     this.store.dispatch(new fromActions.JavaCoursesAction());
   }
 ```
+
+---
+
+## CRUD key steps
+
+- define service.ts
+- define effects
+- register effects in app.module.ts
+- call store.dispatchAciton in component
+
+  - component event--> effects ---> service--->(internet)-->backend database
+
+- file structure
+  - ![File Structure](assets/filestructure.png)
