@@ -22,17 +22,17 @@ export class GenreEffects {
     )
   );
 
-  // TODO ROUTER genres
-  createGenre$ = createEffect(
-    () =>
-      this.actions$.pipe(
-        ofType(genreActions.CREATE_GENRE),
-        concatMap((action: any) =>
-          this.genresService.createGenre(action.payload)
-        ),
-        tap(() => this.router.navigateByUrl('/genres'))
-      ),
-    { dispatch: false }
+  // ROUTER genres
+  createGenre$ = createEffect(() =>
+    this.actions$.pipe(
+      ofType(genreActions.CREATE_GENRE),
+      concatMap((action: any) =>
+        this.genresService.createGenre(action.payload).pipe(
+          map((genre) => new genreActions.GenreAddededAction(genre)),
+          tap(() => this.router.navigateByUrl('/genre-list'))
+        )
+      )
+    )
   );
 
   deleteGenre$ = createEffect(
@@ -40,7 +40,7 @@ export class GenreEffects {
       this.actions$.pipe(
         ofType(genreActions.DELETE_GENRE),
         concatMap((action: any) =>
-          this.genresService.deleteGenre(action.payload.id)
+          this.genresService.deleteGenre(action.payload)
         )
       ),
     { dispatch: false }
@@ -50,11 +50,8 @@ export class GenreEffects {
     () =>
       this.actions$.pipe(
         ofType(genreActions.UPDATE_GENRE),
-        concatMap((action:any) =>
-          this.genresService.updateGenre(
-            action.payload.id,
-            action.payload.name
-          )
+        concatMap((action: any) =>
+          this.genresService.updateGenre(action.payload)
         )
       ),
     { dispatch: false }
@@ -66,3 +63,6 @@ export class GenreEffects {
     private router: Router
   ) {}
 }
+
+//  updateGenre$ ,deleteGenre, these effects do not map the incoming action to a new action type, which is why {dispatch: false} config is used.
+// however,  loadGenre& ,,it maps the response to a new action type called genreLoaded.

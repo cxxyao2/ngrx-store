@@ -23,7 +23,7 @@ export class GenreService {
     return this.http.delete(API_URL + '/' + id);
   }
 
-  updateGenre(id: string, name: string) {
-    return this.http.put(API_URL + '/' + id, { name });
+  updateGenre(genre: Genre) {
+    return this.http.put(API_URL + '/' + genre._id, { name: genre.name });
   }
 }

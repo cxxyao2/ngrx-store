@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -11,7 +12,8 @@ import { CourseComponent } from './components/course/course.component';
 import { AboutComponent } from './components/about/about.component';
 import { EffectsModule } from '@ngrx/effects';
 import { GenreEffects } from './store/effects/genre.effects';
-import { GenreComponent } from './components/genre/genre.component';
+import { GenreListComponent } from './components/genre-list/genre-list.component';
+import { CreateGenreComponent } from './components/create-genre/create-genre.component';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,14 @@ import { GenreComponent } from './components/genre/genre.component';
     ArticleComponent,
     CourseComponent,
     AboutComponent,
-    GenreComponent,
+    GenreListComponent,
+    CreateGenreComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    FormsModule,
     StoreModule.forRoot(reducers, { metaReducers }),
     EffectsModule.forRoot([GenreEffects]),
   ],

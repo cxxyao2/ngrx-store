@@ -11,26 +11,32 @@ export function reducer(
   switch (action.type) {
     case genresActions.CREATE_GENRE: {
       const newArray = [...state.genres];
-      newArray.push({ id: 'TODO', name: action.payload });
-      return { ...state, genres: newArray };
+      newArray.push({ _id: 'undefined', name: action.payload });
+      return { genreLoaded: state.genreLoaded, genres: newArray };
     }
     case genresActions.DELETE_GENRE: {
       const newArray = state.genres.filter(
-        (genre) => genre.id !== action.payload.id
+        (genre) => genre._id !== action.payload
       );
       return { ...state, genres: newArray };
     }
     case genresActions.UPDATE_GENRE: {
       const newArray = state.genres.map((genre) =>
-        genre.id === action.payload.id
-          ? { id: genre.id, name: action.payload.name }
+        genre._id === action.payload._id
+          ? { _id: genre._id, name: action.payload.name }
           : genre
       );
-      return { ...state, genres: newArray };
+      return { genreLoaded: state.genreLoaded, genres: newArray };
     }
     case genresActions.GENRE_LOADED: {
       const newGenres = [...state.genres, ...action.payload];
-      return { ...state, genres: newGenres };
+      return { genreLoaded: true, genres: newGenres };
+    }
+    case genresActions.GENRE_ADDEDED: {
+      const newGenres = [...state.genres, action.payload];
+
+      const rightGenre = newGenres.filter((genre) => genre._id !== 'undefined');
+      return { genreLoaded: true, genres: rightGenre };
     }
     default: {
       return state;
@@ -40,7 +46,7 @@ export function reducer(
 
 export const getCGenreState = createFeatureSelector('genreState');
 
-export const getGenre = createSelector(
+export const getAllGenres = createSelector(
   getCGenreState,
   (state: GenreState) => state.genres
 );

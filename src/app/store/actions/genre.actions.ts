@@ -1,5 +1,6 @@
-// 5 action:
+// 6 action:
 // genresLoaded : dispatched by effect in order to inform the store that the genres were loaded successfully.
+// genresAdded: dispatched by effect in order to get the new _id from backend and update the relevant state
 // createGenre,deleteGenre,updateGenre,loadGenre(:get all genres from database): dispatched by component
 
 import { Action } from '@ngrx/store';
@@ -10,6 +11,7 @@ export const CREATE_GENRE = 'Create Genre';
 export const DELETE_GENRE = 'Delete Genre';
 export const UPDATE_GENRE = 'Update Genre';
 export const GENRE_LOADED = 'Genre is loaded';
+export const GENRE_ADDEDED = 'Genre is added';
 
 export class LoadGenreAction implements Action {
   readonly type = LOAD_GENRE;
@@ -22,7 +24,7 @@ export class CreateGenreAction implements Action {
 
 export class DeleteGenreAction implements Action {
   readonly type = DELETE_GENRE;
-  constructor(public payload: Genre) {}
+  constructor(public payload: string) {}
 }
 
 export class UpdateGenreAction implements Action {
@@ -34,9 +36,16 @@ export class GenreLoadedAction implements Action {
   constructor(public payload: Genre[]) {}
 }
 
+export class GenreAddededAction implements Action {
+  readonly type = GENRE_ADDEDED;
+  constructor(public payload: Genre) {}
+}
+
+
 export type ALL =
   | LoadGenreAction
   | CreateGenreAction
   | DeleteGenreAction
   | UpdateGenreAction
-  | GenreLoadedAction;
+  | GenreLoadedAction
+  | GenreAddededAction;
