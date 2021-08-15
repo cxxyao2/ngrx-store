@@ -44,7 +44,8 @@
 
 ---
 
-## CRUD key steps
+## CRUD 
+take notes: 
 
 - define service.ts
 - define effects
