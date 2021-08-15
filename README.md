@@ -55,9 +55,12 @@
 
 - file structure
 
-  - ![File Structure](assets/filestructure.png)
+  - ![File Structure](src/assets/filestructure.png)
 
 - CRUD Screenshot
-  - ![update](assets/update1.png)
-  - ![add](assets/add1.png)
-  - ![delete](assets/delete1.png)
+    - update 
+  >![update](src/assets/update1.png)
+    - add 
+  > ![add](src/assets/add1.png)
+    - delete 
+  > ![delete](src/assets/delete1.png)
