@@ -16,7 +16,7 @@
 
 - define states
 
-  - app level state + feature specific state
+  - app specific state + feature specific state
 
 - define reducers, include
 
